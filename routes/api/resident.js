@@ -5,7 +5,7 @@ const router = require("express").Router();
 router.route("/add").post(function (req, res) {
     console.log(req.body);
     db.Resident.create(req.body).then(function (newRes) {
-        return db.User.findOneAndUpdate({ _id: req.user.id }, { $push: { Resident: newRes._id } }, { new: true });
+        return db.User.findOneAndUpdate({ _id: req.user.id }, { $push: { resident: newRes._id } }, { new: true });
     }
     ).catch(function (err) {
         console.log(err);
