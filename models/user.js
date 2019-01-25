@@ -17,7 +17,7 @@ var UserSchema = new Schema({
     required: true
   },
 
-  resident: [{
+  residents: [{
     type: Schema.Types.ObjectId,
     ref: "Resident"
   }]
