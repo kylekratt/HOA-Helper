@@ -29,10 +29,6 @@ var ResidentSchema = new Schema({
         type: String,
         required: false,
     },
-    HOaddress: {
-        type: String,
-        required: false,
-    },
     HOphone1: {
         type: String,
         required: false
