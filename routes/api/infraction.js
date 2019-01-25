@@ -28,3 +28,14 @@ router.route("/:id").get(function (req, res) {
         )
         .catch(err => res.status(422).json(err));
 })
+
+router.route("/update").post(function (req, res) {
+    db.Infraction.findByIdAndUpdate(req.body._id, req.body, { new: true }).then(function (newRes) {
+        res.json(newRes);
+    }
+    ).catch(function (err) {
+        console.log(err);
+        res.json(err);
+    });
+
+})
