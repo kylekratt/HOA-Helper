@@ -17,7 +17,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 // Send every request to the React app
 // Define any API routes before this runs
- app.use(routes)
+  app.use(routes)
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/hoaHelper");
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
