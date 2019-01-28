@@ -15,7 +15,7 @@ router.route("/signup").post(function (req, res) {
     email: req.body.email,
     password: req.body.password
   }).then(function () {
-    res.redirect(307, "/login");
+    res.json("you signed up!");
   }).catch(function (err) {
     console.log(err);
     res.json(err);

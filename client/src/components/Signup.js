@@ -9,15 +9,15 @@ class Signup extends Component {
   
   render() {
     return (
-      <div class="row">
-        <div class="col-md-8 offset-md-2">
-          <div class="title">Sing Up or | <a class="btn btn-success" href="/" role="button">Login</a>
+      <div className="row">
+        <div className="col-md-8 offset-md-2">
+          <div className="title">Sign Up or | <a className="btn btn-success" href="/" role="button">Login</a>
           </div>
         </div>
         <div className="col-md-8 offset-md-2 form-box">
           <form className="login">
             <div className="form-group">
-              <label className="label" for="inputEmail1">
+              <label className="label" htmlFor="inputEmail1">
                 Email address
               </label>
               <input
@@ -28,7 +28,7 @@ class Signup extends Component {
               />
             </div>
             <div className="form-group">
-              <label class="label" for="inputPassword1">
+              <label className="label" htmlFor="inputPassword1">
                 Password
               </label>
               <input

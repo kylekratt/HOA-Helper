@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../utils/API";
 
 class Login extends Component {
   state = {
@@ -6,6 +7,24 @@ class Login extends Component {
     password: ""
   }
   
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.email && this.state.password) {
+      API.login({
+        email: this.state.email,
+        password: this.state.password
+      })
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+    }
+  };
   
   render() {
     return (
@@ -22,7 +41,9 @@ class Login extends Component {
               <input
                 type="email"
                 className="form-control"
+                onChange={this.handleInputChange}
                 id="email-input"
+                name="email"
                 placeholder="Email"
               />
             </div>
@@ -33,11 +54,13 @@ class Login extends Component {
               <input
                 type="password"
                 className="form-control"
+                onChange={this.handleInputChange}
                 id="password-input"
+                name="password"
                 placeholder="Password"
               />
             </div>
-            <button type="submit" className="btn btn-success">
+            <button type="submit" onClick={this.handleFormSubmit} className="btn btn-success">
               Login
             </button>
           </form>
