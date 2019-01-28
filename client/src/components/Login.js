@@ -1,30 +1,7 @@
 import React, { Component } from "react";
-import API from "../utils/API";
 
 class Login extends Component {
-  state = {
-    email: "",
-    password: ""
-  }
   
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if ((/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(this.state.email)) && this.state.password) {
-      API.login({
-        email: this.state.email,
-        password: this.state.password
-      })
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
-    }
-  };
   
   render() {
     return (
@@ -41,7 +18,7 @@ class Login extends Component {
               <input
                 type="email"
                 className="form-control"
-                onChange={this.handleInputChange}
+                onChange={this.props.handleInputChange}
                 id="email-input"
                 name="email"
                 placeholder="Email"
@@ -54,13 +31,13 @@ class Login extends Component {
               <input
                 type="password"
                 className="form-control"
-                onChange={this.handleInputChange}
+                onChange={this.props.handleInputChange}
                 id="password-input"
                 name="password"
                 placeholder="Password"
               />
             </div>
-            <button type="submit" onClick={this.handleFormSubmit} className="btn btn-success">
+            <button type="submit" onClick={this.props.login} className="btn btn-success">
               Login
             </button>
           </form>
