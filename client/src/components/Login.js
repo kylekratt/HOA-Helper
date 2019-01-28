@@ -16,7 +16,7 @@ class Login extends Component {
         <div className="col-md-8 offset-md-2 form-box">
           <form className="login">
             <div className="form-group">
-              <label className="label" for="inputEmail1">
+              <label className="label" htmlFor="inputEmail1">
                 Email address
               </label>
               <input
@@ -27,7 +27,7 @@ class Login extends Component {
               />
             </div>
             <div className="form-group">
-              <label class="label" for="inputPassword1">
+              <label className="label" htmlFor="inputPassword1">
                 Password
               </label>
               <input

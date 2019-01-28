@@ -1,8 +1,9 @@
 const express = require("express");
 var session = require("express-session");
 var passport = require("./config/passport");
+var routes = require("./routes")
 const PORT = process.env.PORT || 3001;
-var nodemailer = require('nodemailer');
+// var nodemailer = require('nodemailer');
 var mongoose = require("mongoose");
 const app = express();
 
