@@ -16,7 +16,7 @@ class Login extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.email && this.state.password) {
+    if ((/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(this.state.email)) && this.state.password) {
       API.login({
         email: this.state.email,
         password: this.state.password
@@ -28,9 +28,9 @@ class Login extends Component {
   
   render() {
     return (
-      <div class="row">
-        <div class="col-md-8 offset-md-2">
-          <div class="title">Login or | <a class="btn btn-primary" href="/signup" role="button">Sign Up</a> </div>
+      <div className="row">
+        <div className="col-md-8 offset-md-2">
+          <div className="title">Login or | <a className="btn btn-primary" href="/signup" role="button">Sign Up</a> </div>
         </div>
         <div className="col-md-8 offset-md-2 form-box">
           <form className="login">
