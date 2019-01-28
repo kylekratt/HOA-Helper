@@ -93,11 +93,27 @@ body {
 
 .title {
   font-family: var(--Rubik);
-  font-weight: 300;
-  font-size: 1.75em;
+  font-weight: 400;
+  font-size: 1.65em;
   color: white;
   margin-bottom: 2%;
   -webkit-transform: translateX(-2%);
+}
+
+.subTitle {
+  font-family: var(--Rubik);
+  font-weight: 300;
+  font-size: 1em;
+  color: white;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  float: left
+  /* -webkit-transform: translateX(-2%); */
+}
+
+#signUpBtn {
+  /* background-color: var(--bright-blue); */
+  -webkit-transform: translatey(-2%);
 }
 
 .label {

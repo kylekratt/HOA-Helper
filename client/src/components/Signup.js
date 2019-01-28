@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Login extends Component {
+class Signup extends Component {
   state = {
     email: "",
     password: ""
@@ -11,7 +11,8 @@ class Login extends Component {
     return (
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <div class="title">Login or | <a class="btn btn-primary" href="/signup" role="button">Sign Up</a> </div>
+          <div class="title">Sing Up or | <a class="btn btn-success" href="/" role="button">Login</a>
+          </div>
         </div>
         <div className="col-md-8 offset-md-2 form-box">
           <form className="login">
@@ -37,8 +38,8 @@ class Login extends Component {
                 placeholder="Password"
               />
             </div>
-            <button type="submit" className="btn btn-success">
-              Login
+            <button type="submit" className="btn btn-primary">
+              Sign Up
             </button>
           </form>
         </div>
@@ -47,4 +48,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Signup;
