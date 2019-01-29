@@ -17,13 +17,13 @@ class Resident extends Component {
           <p></p>
         </div>
         <div className="col-1 icon">
-          <img alt="icon" src={TestIcon} />
+        <i class="fa fa-exclamation-triangle text-danger"></i>
         </div>
         <div className="col-1 icon">
-          <img alt="icon" src={TestIcon} />
+        <i class="fa fa-file-invoice-dollar text-warning"></i>
         </div>
         <div className="col-1 icon">
-          <img alt="icon" src={TestIcon} />
+        <i class="fa fa-file-alt text-success"></i>
         </div>
         
       </div>

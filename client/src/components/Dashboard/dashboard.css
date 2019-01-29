@@ -37,6 +37,7 @@ p {
 .icon {
 
   -webkit-transform: translateX(-15px);
+  font-size: 2rem;
 }
 
 .resident-row {
@@ -55,4 +56,9 @@ p {
 
 .nav-item {
    border-right: solid white
+}
+
+.titleIcon {
+    font-size: 2.5rem;
+    color: white
 }
