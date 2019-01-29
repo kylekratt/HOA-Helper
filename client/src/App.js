@@ -6,7 +6,9 @@ import Nav from "./components/Nav.js";
 import Wrapper from "./components/Wrapper.js";
 import Login from "./components/Login";
 import Signup from "./components/Signup"
+import Dashboard from "./components/Dashboard/Dashboard"
 import API from "./utils/API"
+
 
 class App extends Component {
   
@@ -70,6 +72,7 @@ class App extends Component {
             render={(props)=> <Login{...props} isAuth = {this.isAuth} handleInputChange={this.handleInputChange} login={this.login} /> }/>
             <Route exact path="/signup" 
             render={(props)=> <Signup{...props} handleInputChange={this.handleInputChange} signup={this.signup} /> } />
+           <Route exact path="/dashboard" component={Dashboard} />
           </Switch>
         </div>
       </Wrapper>
