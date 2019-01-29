@@ -4,6 +4,11 @@ var bcrypt = require("bcrypt-nodejs");
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 // Creating our User model
+var hash_password = function( password ) {
+  let salt = bcrypt.genSaltSync(); // enter number of rounds, default: 10
+  let hash = bcrypt.hashSync( password, salt );
+  return hash;
+}
 var UserSchema = new Schema({
 
   email: {
@@ -23,11 +28,16 @@ var UserSchema = new Schema({
   }]
 });
 // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
-var User = mongoose.model('User', UserSchema);
-User.prototype.validPassword = function (password) {
-  return bcrypt.compareSync(password, this.password);
+UserSchema.methods.comparePassword = function(password) {
+  if ( ! this.password ) { return false; }
+  return bcrypt.compareSync( password, this.password );
 };
 UserSchema.pre('save', function(next) {
-  user.password = bcrypt.hashSync(User.password, bcrypt.genSaltSync(10), null);
+  // check if password is present and is modified.
+  if ( this.password && this.isModified('password') ) {
+      this.password = hash_password(this.password);
+  }
+  next();
 });
+var User = mongoose.model('User', UserSchema);
 module.exports = User;

@@ -6,7 +6,7 @@ const router = require("express").Router();
 
 router.route("/login").post(passport.authenticate("local"), function (req, res) {
 
-  res.json("/members");
+  res.json(req.user._id);
 });
 
 router.route("/signup").post(function (req, res) {
@@ -14,8 +14,8 @@ router.route("/signup").post(function (req, res) {
   db.User.create({
     email: req.body.email,
     password: req.body.password
-  }).then(function () {
-    res.redirect(307, "/login");
+  }).then(function (result) {
+    res.json(result);
   }).catch(function (err) {
     console.log(err);
     res.json(err);

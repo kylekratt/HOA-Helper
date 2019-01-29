@@ -12,8 +12,8 @@ router.route("/add").post(function (req, res) {
         res.json(err);
     });
 });
-router.route("/list").get(function (req, res) {
-    db.User.findById(req.User._id)
+router.route("/list/:id").get(function (req, res) {
+    db.User.findById(req.params.id)
         .populate({ path: "residents", populate: ("infractions") })
         .then(results => res.json(results))
         .catch(err => res.status(422).json(err));
@@ -45,3 +45,5 @@ router.route("/update").post(function (req, res) {
     });
 
 })
+
+module.exports = router;
