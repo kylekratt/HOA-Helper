@@ -7,6 +7,7 @@ import Wrapper from "./components/Wrapper.js";
 import MainContentWrapper from "./components/MainContent";
 import Login from "./components/Login";
 import Signup from "./components/Signup"
+import Dashboard from "./components/Dashboard/Dashboard"
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Login} />
             <Route exact path="/signup" component={Signup} />
+            <Route exact path="/dashboard" component={Dashboard} />
           </Switch>
         </div>
       </Wrapper>
