@@ -64,10 +64,11 @@ p {
 }
 
 #cardHeader {
-    /* color: white; */
+    color: white;
     font-family: var(--Rubik);
-    font-weight: 500;
+    font-weight: 300;
     font-size: 1.25rem;
+    background: var(--secondary)
 }
 .thead {
     font-family: var(--Rubik);
