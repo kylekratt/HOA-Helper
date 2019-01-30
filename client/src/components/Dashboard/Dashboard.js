@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import DashNav from "./DashNav";
-import Resident from "./Resident";
 import "./dashboard.css";
+import AddRes from "../../components/AddResident/AddRes"
 
 class Dashboard extends Component {
   render() {
@@ -10,8 +9,9 @@ class Dashboard extends Component {
         <div className="card col-12">
           <div className="card-header mt-3 text-center" id="cardHeader">RESIDENTS</div>
           <div className="card-body">
-          <a href="#" className="btn btn-sm btn-primary mb-3">Add Resident</a>
-          <a href="#" className="btn btn-sm btn-primary ml-3 mb-3">Send Message</a>
+          {/* <button type="button" data-toggle="modal" data-target="addRes"className="btn btn-sm btn-primary mb-3">Add Resident</button> */}
+          <AddRes />
+          <a href="#" className="btn btn-sm mb-2 btn-primary">Send Message</a>
           <table className="table">
             <thead class="thead-light">
               <tr>
