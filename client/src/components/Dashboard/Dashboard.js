@@ -6,10 +6,15 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="row">
+      <div class="title">
+            Residents List | 
+            <span>
+              <i class="fa fa-home text-white titleIcon ml-1"/>
+            </span>
+          </div>
         <div className="card col-12">
           <div className="card-header mt-3 text-center" id="cardHeader">RESIDENTS</div>
           <div className="card-body">
-          {/* <button type="button" data-toggle="modal" data-target="addRes"className="btn btn-sm btn-primary mb-3">Add Resident</button> */}
           <AddRes />
           <a href="#" className="btn btn-sm mb-2 btn-primary">Send Message</a>
           <table className="table">

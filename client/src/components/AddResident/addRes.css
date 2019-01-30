@@ -1,9 +1,6 @@
-#btnHack {
-    padding-left: 0;
-    margin-left: 0;
+
+.modal-title {
+    font-size: 1.5rem;
+    color: var(--grey);
 }
 
-#label {
-    text-align: left;
-    color: red;
-}
