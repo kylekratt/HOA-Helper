@@ -32,9 +32,9 @@ class Dashboard extends Component {
               <td> <input type="checkbox" aria-label="Checkbox for following text input"/> </td>
               <td>Bob Bobster</td>
               <td>374 Briarwood Lane, Winter Park, FL</td>
-              <td><i class="fa fa-exclamation-triangle text-danger"></i></td>
-              <td><i class="fa fa-file-invoice-dollar text-warning"></i></td>
-              <td><i class="fa fa-file-alt text-success"></i></td>
+              <td><i class="fa fa-exclamation-triangle text-danger icon"></i></td>
+              <td><i class="fa fa-file-invoice-dollar text-warning icon"></i></td>
+              <td><i class="fa fa-file-alt text-success icon"></i></td>
             </tbody>
           </table>
           </div>

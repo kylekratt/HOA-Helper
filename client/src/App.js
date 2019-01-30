@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup"
 import Dashboard from "./components/Dashboard/Dashboard"
 import API from "./utils/API"
+import ResInfo from "./components/ResInfo/ResInfo"
 
 
 class App extends Component {
@@ -73,6 +74,7 @@ class App extends Component {
             <Route exact path="/signup" 
             render={(props)=> <Signup{...props} handleInputChange={this.handleInputChange} signup={this.signup} /> } />
            <Route exact path="/dashboard" component={Dashboard} />
+           <Route exact path="/res-info" component={ResInfo} />
           </Switch>
         </div>
       </Wrapper>

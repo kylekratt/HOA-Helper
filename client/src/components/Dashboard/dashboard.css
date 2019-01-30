@@ -3,15 +3,15 @@
 } */
 
 p {
-    font-family: var(--Rubik);
-    font-weight: 300;
-    font-size: .95rem;
-    line-height: 120%;
+  font-family: var(--Rubik);
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 120%;
 }
 
 .name {
-    font-weight: 500;
-    font-size: 1rem;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 #dashNav {
@@ -31,47 +31,44 @@ p {
   font-weight: 400;
   /* border-radius: 6px; */
   -webkit-transform: translateX(-15px);
-  border-left: solid 4px white
+  border-left: solid 4px white;
 }
 
 .icon {
-
-  -webkit-transform: translateX(-15px);
-  font-size: 2rem;
+  /* -webkit-transform: translateX(-15px); */
+  font-size: 1.5rem;
+  text-justify: center;
+  margin-top: 10px;
 }
 
 .resident-row {
   margin-top: 12px;
-  border-bottom: solid lightgray .5px;
-  padding-bottom:12px;
-}
-
-.info-label {
-    font-weight: 500;
+  border-bottom: solid lightgray 0.5px;
+  padding-bottom: 12px;
 }
 
 .name {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .nav-item {
-   border-right: solid white
+  border-right: solid white;
 }
 
 .titleIcon {
-    font-size: 2.5rem;
-    color: var(--dark-green) !important;
+  font-size: 2.5rem;
+  color: var(--dark-green) !important;
 }
 
 #cardHeader {
-    color: white;
-    font-family: var(--Rubik);
-    font-weight: 300;
-    font-size: 1.25rem;
-    background: var(--secondary)
+  color: white;
+  font-family: var(--Rubik);
+  font-weight: 300;
+  font-size: 1.25rem;
+  background: var(--secondary);
 }
 .thead {
-    font-family: var(--Rubik);
-    font-weight: 500;
-    font-size: 1rem;
+  font-family: var(--Rubik);
+  font-weight: 500;
+  font-size: 1rem;
 }
