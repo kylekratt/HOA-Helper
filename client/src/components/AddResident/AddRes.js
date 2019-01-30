@@ -22,7 +22,7 @@ class AddRes extends Component {
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
-                <h3 class="modal-title">Add Resident</h3>
+                <h3 className="modal-title">Add Resident</h3>
                 <button
                   type="button"
                   class="close"
@@ -32,10 +32,10 @@ class AddRes extends Component {
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div className="modal-body">
+              <div className="modal-body text-left">
                 <form>
                   <div className="form-group">
-                    <label id="label" for="inputName">Name</label>
+                    <label class="text-left" id="label" for="inputName">Name</label>
                     <input
                       className="form-control"
                       placeholder="First and Last"
