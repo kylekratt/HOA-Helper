@@ -13,7 +13,7 @@ var ResidentSchema = new Schema({
         type: String,
         required: true
     },
-    phone1: {
+    phone: {
         type: String
     },
     payment: {
