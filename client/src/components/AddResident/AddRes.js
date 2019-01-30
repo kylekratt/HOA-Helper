@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import "../AddResident/addRes.css"
+import "../AddResident/addRes.css"
 
 class AddRes extends Component {
   render() {
@@ -35,12 +35,39 @@ class AddRes extends Component {
               <div className="modal-body">
                 <form>
                   <div className="form-group">
-                    <label for="inputName">Name</label>
+                    <label id="label" for="inputName">Name</label>
                     <input
                       className="form-control"
                       placeholder="First and Last"
                       type="text"
                       id="inputName"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label for="inputName">Phone Number</label>
+                    <input
+                      className="form-control"
+                      placeholder="000-000-0000"
+                      type="text"
+                      id="inputName"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label for="inputName">Email</label>
+                    <input
+                      className="form-control"
+                      placeholder="Email"
+                      type="text"
+                      id="inputName"
+                    />
+                  </div>
+                  <div claName="form-group">
+                    <label for="address">Address</label>
+                    <textarea
+                      class="form-control"
+                      id="address"
+                      placeholder="Street, City, State, Zip"
+                      row="3"
                     />
                   </div>
                 </form>

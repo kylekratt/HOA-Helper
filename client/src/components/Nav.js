@@ -11,7 +11,7 @@ const Nav = props => {
     <a href="#">
       <i className="fa fa-outdent"/>Logout
     </a>
-    <a href="/">
+    <a href="/dashboard">
       <i className="fa fa-home" />Residents List
     </a>
   </div>
