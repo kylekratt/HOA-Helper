@@ -6,5 +6,8 @@ export default {
     },
     signup: function(userData) {
         return axios.post("/api/passport/signup", userData)
+    },
+    list: function(id) {
+        return axios.get("/api/resident/list/"+id)
     }
 }

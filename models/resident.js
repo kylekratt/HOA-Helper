@@ -16,21 +16,6 @@ var ResidentSchema = new Schema({
     phone1: {
         type: String
     },
-    phone2: {
-        type: String
-    },
-    HOname: {
-        type: String
-    },
-    HOemail: {
-        type: String
-    },
-    HOphone1: {
-        type: String
-    },
-    HOphone2: {
-        type: String
-    },
     payment: {
         type: Number
     },
