@@ -1,0 +1,30 @@
+/* div {
+    border: solid .5px magenta;
+} */
+
+.infractionHead {
+    
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-family: var(--Rubik);
+    color: var(--grey);
+}
+.subhead {
+    font-size: 1.05rem;
+    font-weight: 500;
+    font-family: var(--Rubik);
+    /* color: var(--primary); */
+}
+
+.dark-green{
+    color: var(--dark-green)
+}
+
+.red {
+    color: var(--red);
+}
+
+.light-italic {
+    font-family: var(--Rubik);
+    font-weight: 300i;
+}

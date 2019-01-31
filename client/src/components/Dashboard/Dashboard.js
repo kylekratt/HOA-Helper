@@ -42,7 +42,7 @@ class Dashboard extends Component {
           <div className="card-body">
             <AddRes update={this.update}/>
             <a href="#" className="btn btn-sm mb-2 btn-primary">Send Message</a>
-            <table className="table">
+            <table className="table text-center">
               <thead className="thead-light">
                 <tr>
                   <th scope="col" className="thead">Select</th>
@@ -59,9 +59,9 @@ class Dashboard extends Component {
                     <td> <input type="checkbox" aria-label="Checkbox for following text input" /> </td>
                     <td> {resident.name} </td>
                     <td> {resident.address} </td>
-                <td>{resident.infractions.length>0 && (<i className="fa fa-exclamation-triangle text-danger"></i>)}</td>
-                    <td>{resident.payment > 0 ? (<i className="fa fa-file-invoice-dollar text-danger"></i>):(<i className="fa fa-file-invoice-dollar text-success"></i>)}</td>
-                    <td><i className="fa fa-file-alt text-success"></i></td>
+                <td>{resident.infractions.length>0 && (<i className="fa fa-exclamation-triangle text-danger icon"></i>)}</td>
+                    <td>{resident.payment > 0 ? (<i className="fa fa-file-invoice-dollar text-danger icon"></i>):(<i className="fa fa-file-invoice-dollar text-success icon"></i>)}</td>
+                    <td><i className="fa fa-file-alt text-success icon"></i></td>
                   </tr>
                 ))}
               </tbody>
