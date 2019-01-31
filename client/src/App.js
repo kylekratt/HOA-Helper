@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 import "./assets/css/reset.css";
 import "./assets/css/style.css";
 import Nav from "./components/Nav.js";
@@ -16,7 +16,8 @@ class App extends Component {
     isAuth: false,
     id : "",
     email: "",
-    password: ""
+    password: "",
+    resId: ""
   }
   
   handleInputChange = event => {
@@ -65,9 +66,11 @@ class App extends Component {
         <Nav isAuth = {this.state.isAuth} logout = {this.logout}/>
         <div className="container">
           <Switch>
-           <Route exact path="/" 
+          <Route exact path = "/"
            render = {(props) => <Dashboard{...props} id={this.state.id} />} />
-           <Route exact path="/res-info" component={ResInfo} />
+           <Route exact path="/res-info/:resId"
+           render = {(props) => <ResInfo{...props} />} />
+           <Redirect to="/"/>
           </Switch>
         </div>
       </Wrapper>
@@ -84,6 +87,7 @@ class App extends Component {
             render={(props)=> <Login{...props} handleInputChange={this.handleInputChange} login={this.login} /> }/>
             <Route exact path="/signup" 
             render={(props)=> <Signup{...props} handleInputChange={this.handleInputChange} signup={this.signup} /> } />  
+            <Redirect to="/" />
           </Switch>
         </div>
       </Wrapper>
