@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import "./assets/css/reset.css";
 import "./assets/css/style.css";
 import Nav from "./components/Nav.js";
@@ -10,7 +10,6 @@ import Dashboard from "./components/Dashboard/Dashboard"
 import API from "./utils/API"
 import ResInfo from "./components/ResInfo/ResInfo"
 
-
 class App extends Component {
   
   state = {
@@ -18,10 +17,6 @@ class App extends Component {
     id : "",
     email: "",
     password: ""
-  }
-
-  setId(id){
-    this.setState({id: id, isAuth: true})
   }
   
   handleInputChange = event => {
@@ -41,7 +36,6 @@ class App extends Component {
         .then(res => {
         console.log(res);
         this.setState({id: res.data, isAuth: true})
-        console.log(this.state);
       })
         .catch(err => console.log(err));
     }
@@ -55,26 +49,41 @@ class App extends Component {
       })
         .then(res => {console.log(res)
         this.setState({id: res.data._id, isAuth: true})
-      console.log(this.state)})
+        })
         .catch(err => console.log(err));
     }
   };
   logOut = () => {
     this.setState({id: "", isAuth: false})
-  }
+  };
+  
   render(){
+  if (this.state.isAuth){
+    return(
+      <Router>
+      <Wrapper>
+        <Nav isAuth = {this.state.isAuth} logout = {this.logout}/>
+        <div className="container">
+          <Switch>
+           <Route exact path="/" 
+           render = {(props) => <Dashboard{...props} id={this.state.id} />} />
+           <Route exact path="/res-info" component={ResInfo} />
+          </Switch>
+        </div>
+      </Wrapper>
+    </Router>
+    )
+  }
   return (
     <Router>
       <Wrapper>
-        <Nav isAuth = {this.isAuth}/>
+        <Nav isAuth = {this.state.isAuth}/>
         <div className="container">
           <Switch>
             <Route exact path="/" 
-            render={(props)=> <Login{...props} isAuth = {this.isAuth} handleInputChange={this.handleInputChange} login={this.login} /> }/>
+            render={(props)=> <Login{...props} handleInputChange={this.handleInputChange} login={this.login} /> }/>
             <Route exact path="/signup" 
-            render={(props)=> <Signup{...props} handleInputChange={this.handleInputChange} signup={this.signup} /> } />
-           <Route exact path="/dashboard" component={Dashboard} />
-           <Route exact path="/res-info" component={ResInfo} />
+            render={(props)=> <Signup{...props} handleInputChange={this.handleInputChange} signup={this.signup} /> } />  
           </Switch>
         </div>
       </Wrapper>

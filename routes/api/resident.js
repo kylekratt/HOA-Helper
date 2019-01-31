@@ -5,7 +5,10 @@ const router = require("express").Router();
 router.route("/add").post(function (req, res) {
     console.log(req.body);
     db.Resident.create(req.body).then(function (newRes) {
-        return db.User.findOneAndUpdate({ _id: req.user.id }, { $push: { resident: newRes._id } }, { new: true });
+        console.log(req.user);
+        db.User.findOneAndUpdate({ _id: req.user._id }, { $push: { residents: newRes._id } }, { new: true })
+        .then((res) => {res.json({message: "Residents Updated!"})})
+        .catch(function(err) { console.log(err); res.json(err)})
     }
     ).catch(function (err) {
         console.log(err);
