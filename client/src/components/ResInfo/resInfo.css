@@ -1,0 +1,22 @@
+/* div {
+    border: solid .5px magenta;
+} */
+
+.resName {
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-family: var(--Rubik);
+    color: var(--grey);
+
+}
+
+.info-label {
+    font-weight: 500;
+}
+/* small table heading text size */
+.thSmall {
+    font-size: .8rem;
+}
+
+
+
