@@ -6,9 +6,12 @@ body {
   --dark-green: rgb(112 171 92);
   --lime-green: rgb(217 255 92);
   --bright-blue: rgb(84 209 237);
+  --dark-blue: rgb(54 95 183);
   --grey: rgb(140 135 130);
+  --red: rgb(230 76 102);
   --Trirong: "Trirong", serif;
   --Rubik: "Rubik", sans-serif;
+
   font-size: 16px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pexels-photo-1546168.png") no-repeat center center
     fixed;

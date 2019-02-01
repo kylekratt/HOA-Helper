@@ -21,7 +21,7 @@ class ResInfo extends Component {
               </p>
               <button className="btn btn-primary btn-sm mt-3">Update</button>
               <button className="btn btn-primary ml-2 btn-sm mt-3">
-                Infraction
+                Infractions
               </button>
               <button className="btn btn-primary ml-2 btn-sm btn-danger mt-3">
                 Delete
