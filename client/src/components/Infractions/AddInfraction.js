@@ -5,10 +5,7 @@ import API from "../../utils/API"
 class AddInfraction extends Component {
   
   state = {
-    name: "",
-    phone: "",
-    email: "",
-    address: ""
+    description: ""
   }
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -20,11 +17,9 @@ class AddInfraction extends Component {
 
   formSubmit = event => {
     event.preventDefault();
-    if ((this.state.name.length>1)&&(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(this.state.email))&&(this.state.address.length>1)){
-      API.add({name: this.state.name, email: this.state.email, address: this.state.address, phone: this.state.phone})
-      .then(() => {this.props.update()
-      console.log(this.state)
-      this.$("#addResModal").modal("toggle")})
+    if (this.state.description.length>0){
+      API.infract({description: this.state.description, id: this.props.id})
+      .then(() => {this.props.update()})
       .catch(err=>console.log(err))
     }
   }
@@ -69,7 +64,7 @@ class AddInfraction extends Component {
                       id="infraction"
                       placeholder="Details"
                       row="3"
-                      name="infraction"
+                      name="description"
                       onChange={this.handleInputChange}
                     />
                   </div>

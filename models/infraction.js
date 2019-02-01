@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var InfractSchema = new Schema({
     description: {
-        type: string,
+        type: String,
         require: true
     },
     notices: {
@@ -10,3 +10,6 @@ var InfractSchema = new Schema({
         default: false
     }
   },{timestamps: true});
+
+  var Infraction = mongoose.model('Infraction', InfractSchema);
+  module.exports = Infraction;

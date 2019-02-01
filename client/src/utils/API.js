@@ -23,6 +23,9 @@ export default {
         return axios.post("/api/resident/update", resData)
     },
     send: function(mailData) {
-        return axios.post("/api/mail/send")
+        return axios.post("/api/mail/send", mailData)
+    },
+    infract: function(infData){
+        return axios.post("/api/infraction/add", infData)
     }
 }

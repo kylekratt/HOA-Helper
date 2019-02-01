@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Redirect} from "react-router-dom";
+import {Redirect, Link} from "react-router-dom";
 import "../ResInfo/resInfo.css";
 import API from "../../utils/API";
 import UpdateRes from "../UpdateRes/UpdateRes.js"
@@ -61,9 +61,9 @@ class ResInfo extends Component {
                 <span className="info-label">Email: </span>{this.state.email}
               </p>
               <UpdateRes update={this.state.update} name={this.state.name} address={this.state.address} phone={this.state.phone} email={this.state.email} id={this.props.match.params.resId}/>
-              <button className="btn btn-primary ml-2 btn-sm mt-3">
+              <Link to = {"/infractions/" + this.props.match.params.resId}className="btn btn-primary ml-2 btn-sm mt-3">
                 Infractions
-              </button>
+              </Link>
               <button className="btn btn-primary ml-2 btn-sm btn-danger mt-3" onClick={() => this.delete(this.props.match.params.resId)}>
                 Delete
               </button>

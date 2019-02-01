@@ -17,7 +17,8 @@ var ResidentSchema = new Schema({
         type: String
     },
     payment: {
-        type: Number
+        type: Number,
+        default: 0
     },
     notices: {
         type: Boolean,
