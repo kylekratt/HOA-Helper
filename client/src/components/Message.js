@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import {Redirect} from "react-router-dom";
 import API from "../utils/API"
 
 class Message extends Component {
     state ={
         subject: "",
-        content: ""
+        content: "",
+        redirect: false
     }
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -16,12 +18,19 @@ class Message extends Component {
         event.preventDefault();
         if(this.state.subject.length>0 && this.state.content.length>0){
             API.send({subject: this.state.subject, content: this.state.content, recipients: this.props.recipients})
-            .then(res => console.log(res))
+            .then(res => {console.log(res)
+            this.setState({redirect: true})})
             .catch(err => console.log(err))
         }
 
     }
     render() {
+        if (this.state.redirect==true){
+            return(
+                <Redirect to = "/"/>
+            )
+        }
+        else{
         return (
             <div className="card col-12 pb-3 ">
             <div className="card-header mt-3 text-center bg-secondary text-white" >MESSAGE</div>
@@ -55,6 +64,7 @@ class Message extends Component {
                 </form>
                 </div>
         )
+        }
     }
 }
 
