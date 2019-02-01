@@ -12,5 +12,17 @@ export default {
     },
     add: function(resData) {
         return axios.post("/api/resident/add", resData)
+    },
+    display: function(resId) {
+        return axios.get("/api/resident/"+resId)
+    },
+    remove: function(resId) {
+        return axios.delete("/api/resident/"+resId)
+    },
+    update: function(resData) {
+        return axios.post("/api/resident/update", resData)
+    },
+    send: function(mailData) {
+        return axios.post("/api/mail/send")
     }
 }

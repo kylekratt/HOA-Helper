@@ -23,7 +23,7 @@ router.route("/list/:id").get(function (req, res) {
 })
 router.route("/:id").get(function (req, res) {
     db.Resident.findById(req.params.id)
-        .populate("infractions")
+        .populate({path: "residents", populate:("infractions")})
         .then(results => res.json(results))
         .catch(err => res.status(422).json(err));
 }).delete(function (req, res) {
@@ -31,7 +31,7 @@ router.route("/:id").get(function (req, res) {
         .then(db.User.findByIdAndUpdate(req.user, { "$pull": { "residents": req.params.id } },
             function (err, res) {
                 if (err) throw err;
-                res.json(res);
+                
             }
         ).then(res.json({ message: "Resident Deleted! Who needs 'em, anyway?" }))
             .catch(err => res.status(422).json(err))
@@ -39,7 +39,7 @@ router.route("/:id").get(function (req, res) {
         .catch(err => res.status(422).json(err));
 })
 router.route("/update").post(function (req, res) {
-    db.Resident.findByIdAndUpdate(req.body._id, req.body, { new: true }).then(function (newRes) {
+    db.Resident.findByIdAndUpdate(req.body.id, {name: req.body.name, address: req.body.address, email: req.body.address, phone: req.body.phone}, { new: true }).then(function (newRes) {
         res.json(newRes);
     }
     ).catch(function (err) {

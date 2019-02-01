@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import "../AddResident/addRes.css"
+import "./updateRes.css"
 import API from "../../utils/API"
 
-class AddRes extends Component {
+class UpdateRes extends Component {
   
   state = {
-    name: "",
-    phone: "",
-    email: "",
-    address: ""
+    name: this.props.name,
+    phone: this.props.phone,
+    email: this.props.email,
+    address: this.props.address,
   }
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -21,9 +21,8 @@ class AddRes extends Component {
   formSubmit = event => {
     event.preventDefault();
     if ((this.state.name.length>1)&&(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(this.state.email))&&(this.state.address.length>1)){
-      API.add({name: this.state.name, email: this.state.email, address: this.state.address, phone: this.state.phone})
-      .then(() => {this.props.update()
-      console.log(this.state)
+      API.update({name: this.state.name, email: this.state.email, address: this.state.address, phone: this.state.phone, id: this.props.id})
+      .then(() => {console.log(this.state)
       this.setState({name: "", phone: "", email: "", address: ""})})
       .catch(err=>console.log(err))
     }
@@ -32,13 +31,13 @@ class AddRes extends Component {
 
   render() {
     return (
-      <div className="btn btn-sm" id="btnHack">
+      <div className="btn btn-sm p-0" id="btnHack">
         <button
-          className="btn btn-primary mb-2 btn-sm btnHack"
+          className="btn btn-primary ml-2 btn-sm mt-3 btnHack"
           data-target="#addResModal"
           data-toggle="modal"
         >
-          Add Resident
+          Update
         </button>
         <div
           className="modal fade"
@@ -113,7 +112,7 @@ class AddRes extends Component {
                 </form>
               </div>
               <div className="modal-footer">
-                <button className="btn btn-primary" onClick={this.formSubmit}>Add</button>
+                <button className="btn btn-primary" onClick={this.formSubmit}>Update</button>
                 <button className="btn btn-primary" data-dismiss="modal">
                   Close
                 </button>
@@ -126,4 +125,4 @@ class AddRes extends Component {
   }
 }
 
-export default AddRes;
+export default UpdateRes;

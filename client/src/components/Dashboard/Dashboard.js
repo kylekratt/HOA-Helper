@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom"
 import "./dashboard.css";
 import AddRes from "../../components/AddResident/AddRes"
 import API from "../../utils/API"
@@ -26,6 +27,12 @@ class Dashboard extends Component {
   update() {
     this.setState({updated: this.state.updated+1})
   }
+
+  send = () => {
+    API.send()
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
+  }
   
   
   render() {
@@ -41,8 +48,8 @@ class Dashboard extends Component {
           <div className="card-header mt-3 text-center" id="cardHeader">RESIDENTS</div>
           <div className="card-body">
             <AddRes update={this.update}/>
-            <a href="#" className="btn btn-sm mb-2 btn-primary">Send Message</a>
-            <table className="table text-center">
+            <a onClick = {this.send} className="btn btn-sm mb-2 btn-primary">Send Message</a>
+            <table className="table">
               <thead className="thead-light">
                 <tr>
                   <th scope="col" className="thead">Select</th>
@@ -54,10 +61,10 @@ class Dashboard extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.residents.map(resident =>(
-                  <tr>
+                {this.state.residents.map(resident =>(  
+                  <tr key={resident._id}>
                     <td> <input type="checkbox" aria-label="Checkbox for following text input" /> </td>
-                    <td> {resident.name} </td>
+                    <td><Link to={"/res-info/"+resident._id}>{resident.name}</Link></td>
                     <td> {resident.address} </td>
                 <td>{resident.infractions.length>0 && (<i className="fa fa-exclamation-triangle text-danger icon"></i>)}</td>
                     <td>{resident.payment > 0 ? (<i className="fa fa-file-invoice-dollar text-danger icon"></i>):(<i className="fa fa-file-invoice-dollar text-success icon"></i>)}</td>
