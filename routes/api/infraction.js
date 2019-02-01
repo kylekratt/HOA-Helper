@@ -3,8 +3,10 @@ const router = require("express").Router();
 
 router.route("/add").post(function (req, res) {
     console.log(req.body);
-    db.Infraction.create(req.body).then(function (newInf) {
-        return db.Resident.findOneAndUpdate({ _id: req.body.id }, { $push: { infraction: newInf._id } }, { new: true });
+    db.Infraction.create({description: req.body.description}).then(function (newInf) {
+        db.Resident.findOneAndUpdate({ _id: req.body.id }, { $push: { infractions: newInf._id } }, { new: true })
+        .then((res) => {res.json({message: "Infracitons Updated!"})})
+        .catch(function(err) { console.log(err); res.json(err)})
     }
     ).catch(function (err) {
         console.log(err);

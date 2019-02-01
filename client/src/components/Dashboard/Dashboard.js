@@ -48,7 +48,9 @@ class Dashboard extends Component {
           <div className="card-header mt-3 text-center" id="cardHeader">RESIDENTS</div>
           <div className="card-body">
             <AddRes update={this.update}/>
-            <a onClick = {this.send} className="btn btn-sm mb-2 btn-primary">Send Message</a>
+            {this.props.recipients.length > 0 &&
+            <Link to="/message" className="btn btn-sm mb-2 btn-primary">Send Message</Link>
+            }
             <table className="table">
               <thead className="thead-light">
                 <tr>
@@ -63,7 +65,7 @@ class Dashboard extends Component {
               <tbody>
                 {this.state.residents.map(resident =>(  
                   <tr key={resident._id}>
-                    <td> <input type="checkbox" aria-label="Checkbox for following text input" /> </td>
+                    <td> <input type="checkbox" aria-label="Checkbox for following text input" name={resident.email} onClick={this.props.handleCheckboxChange}/> </td>
                     <td><Link to={"/res-info/"+resident._id}>{resident.name}</Link></td>
                     <td> {resident.address} </td>
                 <td>{resident.infractions.length>0 && (<i className="fa fa-exclamation-triangle text-danger icon"></i>)}</td>

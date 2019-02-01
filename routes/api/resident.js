@@ -23,7 +23,7 @@ router.route("/list/:id").get(function (req, res) {
 })
 router.route("/:id").get(function (req, res) {
     db.Resident.findById(req.params.id)
-        .populate({path: "residents", populate:("infractions")})
+        .populate("infractions")
         .then(results => res.json(results))
         .catch(err => res.status(422).json(err));
 }).delete(function (req, res) {
