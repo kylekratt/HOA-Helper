@@ -38,7 +38,6 @@ p {
   /* -webkit-transform: translateX(-15px); */
   font-size: 1.5rem;
   text-justify: center;
-  margin-top: 10px;
 }
 
 .resident-row {
@@ -71,4 +70,7 @@ p {
   font-family: var(--Rubik);
   font-weight: 500;
   font-size: 1rem;
+}
+td .icon {
+  margin-top: 1rem;
 }

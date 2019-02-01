@@ -66,9 +66,9 @@ class Dashboard extends Component {
                     <td> <input type="checkbox" aria-label="Checkbox for following text input" /> </td>
                     <td><Link to={"/res-info/"+resident._id}>{resident.name}</Link></td>
                     <td> {resident.address} </td>
-                <td>{resident.infractions.length>0 && (<i className="fa fa-exclamation-triangle text-danger"></i>)}</td>
-                    <td>{resident.payment > 0 ? (<i className="fa fa-file-invoice-dollar text-danger"></i>):(<i className="fa fa-file-invoice-dollar text-success"></i>)}</td>
-                    <td><i className="fa fa-file-alt text-success"></i></td>
+                <td>{resident.infractions.length>0 && (<i className="fa fa-exclamation-triangle text-danger icon"></i>)}</td>
+                    <td>{resident.payment > 0 ? (<i className="fa fa-file-invoice-dollar text-danger icon"></i>):(<i className="fa fa-file-invoice-dollar text-success icon"></i>)}</td>
+                    <td><i className="fa fa-file-alt text-success icon"></i></td>
                   </tr>
                 ))}
               </tbody>

@@ -62,7 +62,7 @@ class ResInfo extends Component {
               </p>
               <UpdateRes update={this.state.update} name={this.state.name} address={this.state.address} phone={this.state.phone} email={this.state.email} id={this.props.match.params.resId}/>
               <button className="btn btn-primary ml-2 btn-sm mt-3">
-                Infraction
+                Infractions
               </button>
               <button className="btn btn-primary ml-2 btn-sm btn-danger mt-3" onClick={() => this.delete(this.props.match.params.resId)}>
                 Delete
